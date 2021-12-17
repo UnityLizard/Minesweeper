@@ -1,2 +1,2 @@
 # Minesweeper
-game made with passion
+game made with passion :D
