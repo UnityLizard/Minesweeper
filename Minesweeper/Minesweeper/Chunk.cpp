@@ -73,7 +73,7 @@ int _main() {
 	cout << "3" << endl;
 	cout << "\033[0;31m";//4*
 	cout << "4" << endl;
-	cout << "\033[0;35m";//5+*
+	cout << "\033[0;35m";//logo / 5+*
 	cout << "5" << endl;
 
 
@@ -83,6 +83,7 @@ int _main() {
 	cout << "P" << endl;
 	cout << "\033[0;96m";//table*
 	cout << "0" << endl;
+
 
 	Reset();
 

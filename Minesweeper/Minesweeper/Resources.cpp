@@ -4,9 +4,9 @@ const int EASY_SIZE = 10;
 const int MEDIUM_SIZE = 15;
 const int HARD_SIZE = 20;
 
-const int EASY_BOMBS = 10;
-const int MEDIUM_BOMBS = 25;
-const int HARD_BOMBS = 40;
+const int EASY_MINES = 10;
+const int MEDIUM_MINES = 25;
+const int HARD_MINES = 40;
 
 const unsigned char UPPER_LEFT_CORNER = 201;
 const unsigned char UPPER_EDGE = 203;
@@ -22,5 +22,5 @@ const unsigned char VERTICAL_LINE = 186;
 const unsigned char HORIZONTAL_LINE = 205;
 
 const unsigned char FLAG = 'P';
-const unsigned char BOMB = 'X';
+const unsigned char MINE = 'X';
 const unsigned char SQUARE = 254;
