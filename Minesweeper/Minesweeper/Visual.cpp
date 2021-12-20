@@ -33,13 +33,13 @@ static void printMenu() {
 	cout << " >> ";
 }
 
-static void printField(int size, int mines) {
+static void printField(int size, int flags) {
 	clear();
 	cout << endl;
 	for (int i = 0; i < 2 * (size + 1); i++) {
 		cout << ' ';
 	}
-	cout << FLAG << ": " << mines << endl;
+	cout << FLAG << ": " << flags << endl;
 
 	for (int i = 0; i <= 2 * (size + 1); i++) {
 		if (i == 0) {

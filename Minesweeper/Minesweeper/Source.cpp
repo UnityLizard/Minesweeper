@@ -26,17 +26,18 @@ void startGame() {
 	}
 
 	int** field = generateField(size);
-	int** revealedField = generateRevealedField(size);
+	int** revealedField = generateField(size);
 
-	firstReveal(field, revealedField, size, mines);
+	int flags = mines;
 
-	int counter = mines + 1;
+	firstReveal(field, revealedField, size, mines, flags);
 
-	/*while (counter <= size * size) {
-		int x, y, action;
+	showDangerousSquares(field, size);
+
+	Minesweeping(field, revealedField, size, mines, flags);
 
 
-	}*/
+	
 
 
 
@@ -62,7 +63,6 @@ void startGame() {
 		}
 		cout << endl;
 	}
-
 
 
 
