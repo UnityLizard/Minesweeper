@@ -1,12 +1,12 @@
 #pragma once
 
-const int EASY_SIZE = 10;
-const int MEDIUM_SIZE = 15;
-const int HARD_SIZE = 20;
+const int EASY_SIZE = 7;
+const int MEDIUM_SIZE = 10;
+const int HARD_SIZE = 12;
 
-const int EASY_MINES = 10;
-const int MEDIUM_MINES = 25;
-const int HARD_MINES = 40;
+const int EASY_MINES = 5;
+const int MEDIUM_MINES = 15;
+const int HARD_MINES = 28;
 
 const unsigned char UPPER_LEFT_CORNER = 201;
 const unsigned char UPPER_EDGE = 203;

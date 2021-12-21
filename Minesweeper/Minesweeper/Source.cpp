@@ -4,70 +4,23 @@
 
 using namespace std;
 
-void startGame() {
+bool startGame() {
 	int difficulty = chooseDifficulty();
 
 	int size = 0;
 	int mines = 0;
 
-	switch (difficulty) {
-	case 1:
-		size = EASY_SIZE;
-		mines = EASY_MINES;
-		break;
-	case 2:
-		size = MEDIUM_SIZE;
-		mines = MEDIUM_MINES;
-		break;
-	case 3:
-		size = HARD_SIZE;
-		mines = HARD_MINES;
-		break;
-	}
+	applyDifficulty(difficulty, size, mines);
 
 	int** field = generateField(size);
 	int** revealedField = generateField(size);
 
 	int flags = mines;
+	int counter = mines;
 
-	firstReveal(field, revealedField, size, mines, flags);
+	firstReveal(field, revealedField, size, mines, flags, counter);
 
-	showDangerousSquares(field, size);
-
-	Minesweeping(field, revealedField, size, mines, flags);
-
-
-	
-
-
-
-
-	int a = 0;
-	for (size_t i = 0; i < size; i++)
-	{
-		for (size_t j = 0; j < size; j++)
-		{
-			if (field[i][j] == -1) {
-				a++;
-			}
-			cout << field[i][j] << " ";
-		}
-		cout << endl;
-	}
-	cout << a << endl;
-	for (size_t i = 0; i < size; i++)
-	{
-		for (size_t j = 0; j < size; j++)
-		{
-			cout << revealedField[i][j] << " ";
-		}
-		cout << endl;
-	}
-
-
-
-
-
+	bool win = Minesweeping(field, revealedField, size, mines, flags, counter);
 
 	for (int i = 0; i < size; i++) {
 		delete[] field[i];
@@ -75,10 +28,18 @@ void startGame() {
 	}
 	delete[] field;
 	delete[] revealedField;
+
+	return win;
 }
 
 int main() {
-	startGame();
+	while (true) {
+		bool win = startGame();
+		int option = endGame(win);
+		if (option == 2) {
+			break;
+		}
+	}
 
 	return 0;
 }
