@@ -16,6 +16,14 @@ static int chooseDifficulty() {
 	do {
 		printMenu();
 		cin >> difficulty;
+
+		if (!difficulty)
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			continue;
+		}
+
 		clear();
 	} while (difficulty < 1 || difficulty > 3);
 
@@ -277,6 +285,13 @@ static void firstReveal(int** field, int** revealedField, int size, int mines, i
 		cin >> y;
 		cin >> action;
 
+		if (!x || !y || !action)
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			continue;
+		}
+
 		x--;
 		y--;
 
@@ -319,6 +334,13 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 		cin >> y;
 		cin >> action;
 
+		if (!x || !y || !action)
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			continue;
+		}
+
 		x--;
 		y--;
 
@@ -346,6 +368,12 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 				printField(field, revealedField, size, flags);
 				int waiting;
 				cin >> waiting;
+				
+				if (!waiting)
+				{
+					cin.clear();
+					cin.ignore(numeric_limits<streamsize>::max(), '\n');
+				}
 
 				return false;
 			}
@@ -365,6 +393,12 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 	int waiting;
 	cin >> waiting;
 
+	if (!waiting)
+	{
+		cin.clear();
+		cin.ignore(numeric_limits<streamsize>::max(), '\n');
+	}
+
 	return true;
 }
 
@@ -374,6 +408,14 @@ static int endGame(bool win) {
 	do {
 		printEndScreen(win);
 		cin >> option;
+
+		if (!option)
+		{
+			cin.clear();
+			cin.ignore(numeric_limits<streamsize>::max(), '\n');
+			continue;
+		}
+
 		clear();
 	} while (option < 1 || option > 2);
 

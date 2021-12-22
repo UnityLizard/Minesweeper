@@ -1,4 +1,6 @@
 ﻿#include <iostream>
+#include <cstdlib>
+#include <ctime>
 #include "Logic.cpp"
 #include "Resources.cpp"
 
@@ -33,6 +35,8 @@ bool startGame() {
 }
 
 int main() {
+	srand(time(NULL));
+	
 	while (true) {
 		bool win = startGame();
 		int option = endGame(win);

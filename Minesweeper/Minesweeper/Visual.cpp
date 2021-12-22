@@ -115,7 +115,7 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 	cout << endl;
 
 	cout << "   >> row-column-reveal(1)/(un)mark(2)" << endl;
-	cout << "   >>";
+	cout << "   >> ";
 }
 
 static void printEndScreen(bool win) {
