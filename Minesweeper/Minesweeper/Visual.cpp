@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Resources.cpp"
+#include "Colors.cpp"
 
 using namespace std;
 
@@ -16,7 +17,11 @@ static void printMenu() {
 	}
 	cout << UPPER_RIGHT_CORNER << endl;
 
-	cout << ' ' << VERTICAL_LINE << " MINESWEEPER " << VERTICAL_LINE << endl;//color
+	cout << ' ' << VERTICAL_LINE;
+	purple();
+	cout << " MINESWEEPER ";
+	reset();
+	cout << VERTICAL_LINE << endl;
 
 	cout << ' ' << LOWER_LEFT_CORNER;
 	for (int i = 0; i < 13; i++) {
@@ -25,9 +30,18 @@ static void printMenu() {
 	cout << LOWER_RIGHT_CORNER << endl;
 
 	cout << endl;
-	cout << " 1. " << "EASY" << endl;//color
-	cout << " 2. " << "MEDIUM" << endl;//color
-	cout << " 3. " << "HARD" << endl;//color
+	cout << " 1. ";
+	green();
+	cout << "EASY" << endl;
+	reset();
+	cout << " 2. ";
+	yellow();
+	cout << "MEDIUM" << endl;
+	reset();
+	cout << " 3. ";
+	red();
+	cout << "HARD" << endl;
+	reset();
 	cout << endl;
 
 	cout << " >> ";
@@ -55,10 +69,17 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 					cout << ' ' << '#' << ' ' << VERTICAL_LINE;
 				}
 				else if (j > 0 && j < 10) {
-					cout << ' ' << j << ' ' << VERTICAL_LINE;
+					cout << ' ';
+					cyan();
+					cout << j;
+					reset();
+					cout << ' ' << VERTICAL_LINE;
 				}
 				else {
-					cout << j << ' ' << VERTICAL_LINE;
+					cyan();
+					cout << j;
+					reset();
+					cout << ' ' << VERTICAL_LINE;
 				}
 			}
 			cout << endl;
@@ -81,10 +102,17 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 
 			cout << ' ' << ' ' << ' ' << VERTICAL_LINE;
 			if (i < 10) {
-				cout << ' ' << i << ' ' << VERTICAL_LINE;
+				cout << ' ';
+				cyan();
+				cout << i;
+				reset();
+				cout << ' ' << VERTICAL_LINE;
 			}
 			else {
-				cout << i << ' ' << VERTICAL_LINE;
+				cyan();
+				cout << i;
+				reset();
+				cout << ' ' << VERTICAL_LINE;
 			}
 			for (int j = 0; j < size; j++) {
 				cout << ' ';
@@ -93,17 +121,21 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 					cout << ' ';
 				}
 				else if (revealedField[i - 1][j] == 2) {
-					cout << FLAG;//color
+					orange();
+					cout << FLAG;
+					reset();
 				}
 				else {
 					if (field[i - 1][j] == -1) {
-						cout << MINE;//color
+						gray();
+						cout << MINE;
+						reset();
 					}
 					else if (field[i - 1][j] == 0) {
-						cout << SQUARE;//color
+						cout << SQUARE;
 					}
 					else {
-						cout << field[i - 1][j];//color
+						color(field[i - 1][j]);
 					}
 				}
 
@@ -128,7 +160,11 @@ static void printEndScreen(bool win) {
 		}
 		cout << UPPER_RIGHT_CORNER << endl;
 
-		cout << ' ' << VERTICAL_LINE << " YOU WIN " << VERTICAL_LINE << endl;//color
+		cout << ' ' << VERTICAL_LINE;
+		green();
+		cout << " YOU WIN ";
+		reset();
+		cout << VERTICAL_LINE << endl;
 
 		cout << ' ' << LOWER_LEFT_CORNER;
 		for (int i = 0; i < 9; i++) {
@@ -144,7 +180,11 @@ static void printEndScreen(bool win) {
 		}
 		cout << UPPER_RIGHT_CORNER << endl;
 
-		cout << ' ' << VERTICAL_LINE << " YOU LOSE " << VERTICAL_LINE << endl;//color
+		cout << ' ' << VERTICAL_LINE;
+		red();
+		cout << " YOU LOSE ";
+		reset();
+		cout << VERTICAL_LINE << endl;
 
 		cout << ' ' << LOWER_LEFT_CORNER;
 		for (int i = 0; i < 10; i++) {
@@ -154,8 +194,14 @@ static void printEndScreen(bool win) {
 	}
 
 	cout << endl;
-	cout << " 1. " << "PLAY AGAIN" << endl;//color
-	cout << " 2. " << "EXIT" << endl;//color
+	cout << " 1. ";
+	cyan();
+	cout << "PLAY AGAIN" << endl;
+	reset();
+	cout << " 2. ";
+	purple();
+	cout << "EXIT" << endl;
+	reset();
 	cout << endl;
 
 	cout << " >> ";

@@ -139,7 +139,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Chunk.cpp" />
+    <ClCompile Include="Colors.cpp" />
     <ClCompile Include="Logic.cpp" />
     <ClCompile Include="Visual.cpp" />
     <ClCompile Include="Resources.cpp" />

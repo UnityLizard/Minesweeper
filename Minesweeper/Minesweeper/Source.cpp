@@ -2,7 +2,6 @@
 #include <cstdlib>
 #include <ctime>
 #include "Logic.cpp"
-#include "Resources.cpp"
 
 using namespace std;
 
@@ -44,6 +43,5 @@ int main() {
 			break;
 		}
 	}
-
 	return 0;
 }
