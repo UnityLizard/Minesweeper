@@ -53,7 +53,10 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 	for (int i = 0; i < 2 * (size + 1); i++) {
 		cout << ' ';
 	}
-	cout << FLAG << ": " << flags << endl;
+	orange();
+	cout << FLAG;
+	reset();
+	cout << ": " << flags << endl;
 
 	for (int i = 0; i <= size + 1; i++) {
 		if (i == 0) {
