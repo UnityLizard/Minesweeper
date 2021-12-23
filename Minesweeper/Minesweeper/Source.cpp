@@ -1,7 +1,7 @@
 ﻿#include <iostream>
 #include <cstdlib>
 #include <ctime>
-#include "Logic.cpp"
+#include "Logic.h"
 
 using namespace std;
 
@@ -23,6 +23,8 @@ bool startGame() {
 
 	bool win = Minesweeping(field, revealedField, size, mines, flags, counter);
 
+	bool playAgain = endGame(field, revealedField, size, flags, win);
+
 	for (int i = 0; i < size; i++) {
 		delete[] field[i];
 		delete[] revealedField[i];
@@ -30,18 +32,18 @@ bool startGame() {
 	delete[] field;
 	delete[] revealedField;
 
-	return win;
+	return playAgain;
 }
 
 int main() {
 	srand(time(NULL));
 	
 	while (true) {
-		bool win = startGame();
-		int option = endGame(win);
-		if (option == 2) {
+		bool playAgain = startGame();
+		if (!playAgain) {
 			break;
 		}
 	}
+
 	return 0;
 }

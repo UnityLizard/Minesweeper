@@ -1,6 +1,6 @@
 #include <iostream>
-#include "Resources.cpp"
-#include "Colors.cpp"
+#include "Resources.h"
+#include "Colors.h"
 
 using namespace std;
 
@@ -148,14 +148,14 @@ static void printField(int** field, int** revealedField, int size, int flags) {
 		}
 	}
 	cout << endl;
+}
 
+static void printCommand() {
 	cout << "   >> row-column-reveal(1)/(un)mark(2)" << endl;
 	cout << "   >> ";
 }
 
 static void printEndScreen(bool win) {
-	clear();
-
 	if (win) {
 		cout << ' ' << UPPER_LEFT_CORNER;
 		for (int i = 0; i < 9; i++) {
@@ -184,7 +184,7 @@ static void printEndScreen(bool win) {
 		cout << UPPER_RIGHT_CORNER << endl;
 
 		cout << ' ' << VERTICAL_LINE;
-		red();
+		orange();
 		cout << " YOU LOSE ";
 		reset();
 		cout << VERTICAL_LINE << endl;

@@ -139,10 +139,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Colors.cpp" />
-    <ClCompile Include="Logic.cpp" />
-    <ClCompile Include="Visual.cpp" />
-    <ClCompile Include="Resources.cpp" />
+    <ClCompile Include="Colors.h" />
+    <ClCompile Include="Logic.h" />
+    <ClCompile Include="Visual.h" />
+    <ClCompile Include="Resources.h" />
     <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

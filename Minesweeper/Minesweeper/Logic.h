@@ -1,5 +1,6 @@
 #include <iostream>
-#include "Visual.cpp"
+#include <limits>
+#include "Visual.h"
 
 using namespace std;
 
@@ -280,6 +281,7 @@ static void firstReveal(int** field, int** revealedField, int size, int mines, i
 
 	do {
 		printField(field, revealedField, size, flags);
+		printCommand();
 
 		cin >> x;
 		cin >> y;
@@ -329,6 +331,7 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 
 	while (counter < size * size) {
 		printField(field, revealedField, size, flags);
+		printCommand();
 
 		cin >> x;
 		cin >> y;
@@ -365,15 +368,6 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 
 			if (isMine(field, x, y)) {
 				revealAll(field, revealedField, size);
-				printField(field, revealedField, size, flags);
-				int waiting;
-				cin >> waiting;
-				
-				if (!waiting)
-				{
-					cin.clear();
-					cin.ignore(numeric_limits<streamsize>::max(), '\n');
-				}
 
 				return false;
 			}
@@ -388,28 +382,19 @@ static bool Minesweeping(int** field, int** revealedField, int size, int mines, 
 	}
 	
 	revealLeft(revealedField, size);
-	printField(field, revealedField, size, flags);
-
-	int waiting;
-	cin >> waiting;
-
-	if (!waiting)
-	{
-		cin.clear();
-		cin.ignore(numeric_limits<streamsize>::max(), '\n');
-	}
 
 	return true;
 }
 
-static int endGame(bool win) {
-	int option = 0;
+static bool endGame(int** field, int** revealedField, int size, int flags, bool win) {
+	int playAgain = 0;
 
 	do {
+		printField(field, revealedField, size, flags);
 		printEndScreen(win);
-		cin >> option;
+		cin >> playAgain;
 
-		if (!option)
+		if (!playAgain)
 		{
 			cin.clear();
 			cin.ignore(numeric_limits<streamsize>::max(), '\n');
@@ -417,7 +402,11 @@ static int endGame(bool win) {
 		}
 
 		clear();
-	} while (option < 1 || option > 2);
+	} while (playAgain < 1 || playAgain > 2);
 
-	return option;
+	if (playAgain == 1) {
+		return true;
+	}
+
+	return false;
 }
