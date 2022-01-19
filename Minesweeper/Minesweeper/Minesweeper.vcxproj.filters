@@ -18,17 +18,28 @@
     <ClCompile Include="Source.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Resources.h">
+    <ClCompile Include="Visual.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Logic.h">
+    <ClCompile Include="Colors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Colors.h">
+    <ClCompile Include="Logic.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Visual.h">
-      <Filter>Source Files</Filter>
-    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Resources.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Logic.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Visual.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Colors.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

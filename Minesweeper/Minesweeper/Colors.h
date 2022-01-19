@@ -1,62 +1,25 @@
+#pragma once
+
 #include <iostream>
 
 using namespace std;
 
-static void reset()
-{
-	cout << "\033[0m";
-}
+void reset();
 
-static void blue() {
-	cout << "\033[0;94m";
-}
+void blue();
 
-static void green() {
-	cout << "\033[0;92m";
-}
+void green();
 
-static void yellow() {
-	cout << "\033[0;33m";
-}
+void yellow();
 
-static void red() {
-	cout << "\033[0;31m";
-}
+void red();
 
-static void purple() {
-	cout << "\033[0;35m";
-}
+void purple();
 
-static void gray() {
-	cout << "\033[0;90m";
-}
+void gray();
 
-static void orange() {
-	cout << "\033[0;91m";
-}
+void orange();
 
-static void cyan() {
-	cout << "\033[0;96m";
-}
+void cyan();
 
-static void color(int number) {
-	switch (number) {
-	case 1:
-		blue();
-		break;
-	case 2:
-		green();
-		break;
-	case 3:
-		yellow();
-		break;
-	case 4:
-		red();
-		break;
-	default:
-		purple();
-		break;
-	}
-	cout << number;
-	reset();
-}
+void color(int number);
